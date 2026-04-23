@@ -1,49 +1,45 @@
-# Dubai-Property-AI
 
-## 🏗️ Dubai Property Intelligence (DPI)
-AI-Powered Real Estate Investment Audit Tool
-Live Demo: https://huggingface.co/spaces/dula22438/Dubai-property-advisor
-##
+# 🏗️ Dubai Property Intelligence (DPI)
+### **AI-Powered Real Estate Investment Audit Tool**
 
-## Developer: Dulasi Nethma
+Live Demo : https://huggingface.co/spaces/dula22438/Dubai-property-advisor
 
-##
+---
 
-##🌟 Overview
-Dubai Property Intelligence is a specialized RAG (Retrieval-Augmented Generation) pipeline designed to provide "Decision-Grade" intelligence for the Dubai luxury real estate market.
+## 🌟 Project Overview
+**Dubai Property Intelligence** is a specialized RAG (Retrieval-Augmented Generation) pipeline engineered to provide "Decision-Grade" intelligence for the Dubai luxury real estate market. 
 
-Unlike standard property listings, this system cross-references active listings (like those from Emaar's 'The Oasis') against raw Dubai Land Department (DLD) transaction data to provide an unbiased, data-backed verdict on property value.
+While standard listings provide "asking prices," this system performs an automated audit by cross-referencing active listings against raw **Dubai Land Department (DLD)** transaction data.
+
+---
 
 ## 🚀 Key Features
-DLD Validation: Automatically cross-references property specifications against actual historical sales records.
+* **DLD Validation:** Validates property specs against actual government-recorded historical sales.
+* **Investment Insights:** Leverages **Llama 3.1** to calculate market velocity and price benchmarks.
+* **Growth Analysis:** Detects localized trends, such as the **0.22% market stabilization**.
+* **Conversational Audit:** A seamless **Gradio UI** for natural language queries.
 
-Investment Insights: Utilizes Llama 3.1 via Groq API to calculate market velocity and price-per-square-foot benchmarks.
+---
 
-Growth Analysis: Identifies localized trends, such as the current 0.22% market stabilization and scarcity premiums for waterfront assets.
+## 🛠️ Tech Stack
+* **Core Logic:** Python
+* **LLM:** Llama 3.1 (70B Versatile) via Groq Cloud API
+* **Interface:** Gradio
+* **Data Science:** Pandas
+* **Hosting:** Hugging Face Spaces
 
-Conversational Interface: A user-friendly Gradio UI for agents and investors to query complex datasets.
-##
+---
 
-##🛠️ Tech Stack
-Language: Python
+## ⚙️ Setup & Security
+1. **Environment Variables:** All API keys are injected via secure Secrets management.
+2. **Configuration Template:** Includes a \`.env.example\` file for standardization.
+3. **Data Protection:** Private credentials are excluded via \`.gitignore\`.
 
-LLM: Llama 3.1 (70B Versatile)
+---
 
-API: Groq Cloud
+## 📈 Real-World Application
+Developed as a **PropTech prototype** to solve the "Trust Gap" in off-plan investments, reducing the sales cycle for agents and increasing transparency for global investors.
 
-Interface: Gradio
-
-Data Handling: Pandas (for DLD CSV analysis)
-
-Deployment: Hugging Face Spaces
-
-⚙️ Setup & Security
-This project implements industry-standard security practices:
-
-Environment Variables: All API keys are managed through secure Secrets/Environment Variables.
-
-Template System: A .env.example file is provided for local configuration.
-
-Safety: Private credentials are excluded from the repository via .gitignore.
-
-Developed as a prototype for advanced PropTech solutions in the UAE market.
+---
+*Developed by **Dulasi Nethma** | BSc (Hons) in IT | Aspiring AI Engineer*
+EOF
