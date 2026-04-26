@@ -1,0 +1,14 @@
+name: Sync to Hugging Face hub
+on:
+  push:
+    branches: [main]
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: huggingface/hub-sync@v1.0
+        with:
+          github_repo_id: Dula21/Dubai-Property-AI
+          huggingface_repo_id: dula22438/Dubai-property-advisor
+          hf_token: ${{ secrets.HF_TOKEN }}
