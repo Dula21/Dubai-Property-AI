@@ -1,43 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap');
 
+/* Remove Gradio Footer */
 footer {visibility: hidden}
 
+/* Main Container Spacing */
 .gradio-container {
+    font-family: 'Inter', sans-serif !important;
+    max-width: 1100px !important;
+    margin: auto;
+}
+
+/* Fix the "Cramped" Chatbox - Increased height and better borders */
+#chatbot {
+    min-height: 700px !important; 
+    border-radius: 15px !important;
+    border: 1px solid #C5A059 !important; /* Gold border */
+    background-color: #0b0f19 !important;
+}
+
+/* Headers */
+h1 {
     font-family: 'Montserrat', sans-serif !important;
-    max-width: 860px !important;
-    margin: auto !important;
-}
-
-.chatbot {
-    height: 520px !important;
-    border-radius: 12px !important;
-    border: 1px solid #C5A059 !important;
-    padding: 12px !important;
-}
-
-textarea {
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 15px !important;
-    border-radius: 10px !important;
-    border: 1px solid #C5A059 !important;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #C5A059, #a07840) !important;
-    border: none !important;
-    border-radius: 10px !important;
-    font-weight: 700 !important;
-    color: white !important;
-}
-
-.btn-secondary {
-    border: 1px solid #C5A059 !important;
     color: #C5A059 !important;
-    border-radius: 8px !important;
-    background: transparent !important;
+    text-align: center;
+    font-size: 2.5rem !important;
+    margin-top: 30px !important;
 }
 
-.primary-header {
+h3 {
     text-align: center;
-    color: #C5A059;
+    font-weight: 400 !important;
+    color: #a0a0a0 !important;
+    margin-bottom: 40px !important;
+}
+
+/* Professional Gold Button */
+button.primary {
+    background: linear-gradient(90deg, #C5A059, #9A7B42) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+/* Example Chips */
+.category-button {
+    border: 1px solid #444 !important;
+    transition: all 0.3s ease;
+}
+
+.category-button:hover {
+    border-color: #C5A059 !important;
+    background: #1a1a1a !important;
 }
