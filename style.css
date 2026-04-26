@@ -6,14 +6,12 @@ footer {visibility: hidden}
 .gradio-container {
     font-family: 'Inter', sans-serif !important;
     max-width: 1150px !important;
-    margin: auto;
+    margin: auto !important;
 }
 
-/* CONTAINER FIX */
 #chatbot-container {
-    min-height: 750px !important; 
     border-radius: 15px !important;
-    border: 1.5px solid #C5A059 !important; 
+    border: 1.5px solid #C5A059 !important;
     padding: 20px !important;
     background-color: #0b0f19 !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -21,53 +19,61 @@ footer {visibility: hidden}
     flex-direction: column;
 }
 
-/* FIXING THE MESSAGE BUBBLES */
-#chatbot-container .bubble-wrap {
+#chatbot {
     height: 550px !important;
     overflow-y: auto !important;
+    background-color: transparent !important;
+    border: none !important;
 }
 
-/* FIXING THE INPUT BOX */
-#chatbot-container input {
+#msg-box textarea {
     background-color: #1a1a1a !important;
-    border: 1px solid #333 !important;
+    border: 1px solid #C5A059 !important;
     color: white !important;
-    padding: 12px !important;
+    padding: 14px !important;
+    border-radius: 10px !important;
+    font-size: 15px !important;
+    font-family: 'Inter', sans-serif !important;
 }
 
-/* HEADERS */
 h1 {
     font-family: 'Montserrat', sans-serif !important;
     color: #C5A059 !important;
-    text-align: center;
+    text-align: center !important;
     font-size: 2.8rem !important;
     margin-bottom: 0px !important;
 }
 
 h3 {
-    text-align: center;
+    text-align: center !important;
     color: #888 !important;
     margin-top: 5px !important;
     margin-bottom: 30px !important;
 }
 
-/* SUBMIT BUTTON */
 button.primary {
     background: linear-gradient(90deg, #C5A059, #9A7B42) !important;
     border: none !important;
     color: white !important;
     font-weight: 600 !important;
+    border-radius: 10px !important;
 }
 
-/* EXAMPLE BUTTONS - making them cleaner and separated */
 .examples-container {
     margin-top: 20px !important;
 }
 
 .example-btn {
     background-color: #1a1a1a !important;
-    border: 1px solid #444 !important;
+    border: 1px solid #C5A059 !important;
+    color: #C5A059 !important;
     border-radius: 8px !important;
     padding: 8px 15px !important;
     margin: 5px !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+.example-btn:hover {
+    background-color: #C5A059 !important;
+    color: #000 !important;
 }
