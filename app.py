@@ -33,7 +33,10 @@ def dubai_ai_advisor(user_message, history):
         history.append((user_message, f"System Error: {str(e)}"))
         return "", history
 
-# Load CSS from file safely
+# Helper function for custom example buttons
+def load_example(example_text):
+    return example_text
+
 with open("style.css", "r") as f:
     custom_css = f.read()
 
@@ -49,18 +52,21 @@ with gr.Blocks(css=custom_css) as demo:
             container=False,
             elem_id="msg-box"
         )
-        gr.Examples(
-            examples=[
-                ["What are the current property price trends in Dubai Marina?"],
-                ["Which areas in Dubai offer the highest rental yields (ROI) right now?"],
-                ["Tell me about the new off-plan projects launching in 2026."],
-                ["What are the golden visa requirements for property investors?"]
-            ],
-            inputs=msg
-        )
+        
+        # CUSTOM EXAMPLES (Replacing gr.Examples to stop the crash)
+        with gr.Row(elem_id="custom-examples"):
+            ex1 = gr.Button("Marina Trends", variant="secondary", size="sm")
+            ex2 = gr.Button("Highest ROI", variant="secondary", size="sm")
+            ex3 = gr.Button("2026 Projects", variant="secondary", size="sm")
+            ex4 = gr.Button("Golden Visa", variant="secondary", size="sm")
+
+    # Mapping buttons to the input box
+    ex1.click(lambda: "What are the current property price trends in Dubai Marina?", None, msg)
+    ex2.click(lambda: "Which areas in Dubai offer the highest rental yields (ROI) right now?", None, msg)
+    ex3.click(lambda: "Tell me about the new off-plan projects launching in 2026.", None, msg)
+    ex4.click(lambda: "What are the golden visa requirements for property investors?", None, msg)
 
     msg.submit(dubai_ai_advisor, [msg, chatbot], [msg, chatbot])
 
 if __name__ == "__main__":
-    # CRITICAL FIX: show_api=False bypasses the Gradio 4.36.1 internal error
     demo.launch(show_api=False)

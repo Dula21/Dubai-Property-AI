@@ -77,3 +77,22 @@ button.primary {
     background-color: #C5A059 !important;
     color: #000 !important;
 }
+
+#custom-examples {
+    margin-top: 10px;
+    gap: 10px;
+}
+
+#custom-examples button {
+    background: #1a1a1a !important;
+    border: 1px solid #C5A059 !important;
+    color: #C5A059 !important;
+    font-size: 12px !important;
+    border-radius: 20px !important;
+    min-width: 100px !important;
+}
+
+#custom-examples button:hover {
+    background: #C5A059 !important;
+    color: black !important;
+}
