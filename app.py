@@ -15,37 +15,30 @@ except FileNotFoundError:
 
 def dubai_ai_advisor(user_message, history):
     try:
-        system_prompt = f"""You are a Dubai Real Estate expert AI assistant. 
-        Use the following market data to answer questions accurately:
+        # 1. Start with the expert persona
+        messages = [{"role": "system", "content": f"You are a Dubai Real Estate expert. Use this data: {market_context}"}]
         
-        {market_context}
-        
-        Always provide specific data points when available and be concise."""
-
-        # Build message history
-        messages = [{"role": "system", "content": system_prompt}]
-        
-        # Add conversation history
-        for msg in history:
-            messages.append({"role": msg["role"], "content": msg["content"]})
-        
-        # Add current user message
+        # 2. Add history (In Gradio 4.36.1, history is a list of lists)
+        for human, assistant in history:
+            messages.append({"role": "user", "content": human})
+            messages.append({"role": "assistant", "content": assistant})
+                
+        # 3. Add the current message
         messages.append({"role": "user", "content": user_message})
 
         chat_completion = client.chat.completions.create(
             messages=messages,
             model="llama-3.1-8b-instant",
         )
-        
         return chat_completion.choices[0].message.content
-
     except Exception as e:
-        return f"Error: {str(e)}"
-
+        return f"System Error: {str(e)}"
+    
+    
 # 2. Interface
 demo = gr.ChatInterface(
     fn=dubai_ai_advisor, 
-    type="messages",
+    
     title="DPI: Dubai Property Intelligence 🇦🇪",
     description="I am an AI trained on Dubai Land Department trends. Ask me anything about property prices, ROI, or market trends!",
     
