@@ -12,18 +12,12 @@ try:
 except Exception:
     market_context = "Data currently unavailable."
 
-# 2. Load CSS from file
-with open("style.css", "r") as f:
-    custom_css = f.read()
-
 def dubai_ai_advisor(user_message, history):
     try:
         messages = [{"role": "system", "content": f"You are a Dubai Real Estate expert. Use this data: {market_context}"}]
-        
         for human, assistant in history:
             messages.append({"role": "user", "content": human})
             messages.append({"role": "assistant", "content": assistant})
-                
         messages.append({"role": "user", "content": user_message})
 
         chat_completion = client.chat.completions.create(
@@ -34,21 +28,23 @@ def dubai_ai_advisor(user_message, history):
     except Exception as e:
         return f"System Error: {str(e)}"
 
-# 3. Build Interface
-with gr.Blocks(css=custom_css, title="DPI: Dubai Property Intelligence") as demo:
-    gr.Markdown("# 🇦🇪 Dubai Property Intelligence", elem_classes="primary-header")
-    gr.Markdown("### Your specialized AI advisor for ROI, trends, and investments.")
+# 2. Build Interface - The Corrected Way
+with gr.Blocks(css="style.css", theme=gr.themes.Default(primary_hue="amber")) as demo:
+    gr.Markdown("# 🇦🇪 Dubai Property Intelligence")
+    gr.Markdown("### Premium AI Insights for Investors & Market Enthusiasts")
     
-    gr.ChatInterface(
-        fn=dubai_ai_advisor,
-        examples=[
-            ["What are the current property price trends in Dubai Marina?"],
-            ["Which areas in Dubai offer the highest rental yields (ROI) right now?"],
-            ["Tell me about the new off-plan projects launching in 2026."],
-            ["What are the golden visa requirements for property investors?"]
-        ]
-    )
+    # We wrap the interface in a Group with the ID
+    with gr.Group(elem_id="chatbot-container"):
+        gr.ChatInterface(
+            fn=dubai_ai_advisor,
+            examples=[
+                ["What are the current property price trends in Dubai Marina?"],
+                ["Which areas in Dubai offer the highest rental yields (ROI) right now?"],
+                ["Tell me about the new off-plan projects launching in 2026."],
+                ["What are the golden visa requirements for property investors?"]
+            ]
+        )
 
-# 4. Launch
+# 3. Launch
 if __name__ == "__main__":
     demo.launch()
