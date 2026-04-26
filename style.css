@@ -1,24 +1,22 @@
 /* Custom Global Styling for Dubai Intelligence */
+/* Global Dark Background */
 body, .gradio-container {
     background-color: #0b0b0b !important;
-    color: #e0e0e0 !important;
 }
 
-/* Make the chatbot background dark */
-.message-wrap {
-    background-color: #111111 !important;
-}
-
-/* Gold Accents for Buttons and Links */
-button.primary {
+/* Luxury Gold Accents */
+.primary-button, button.primary {
     background: linear-gradient(45deg, #C5A059, #8C6239) !important;
     border: none !important;
     color: black !important;
-    font-weight: bold !important;
 }
 
-/* User Message Styling */
+/* Chatbot Message Bubbles */
 .user {
-    background-color: #1a1a1a !important;
     border: 1px solid #C5A059 !important;
+    background-color: #1a1a1a !important;
+}
+
+.bot {
+    background-color: #111111 !important;
 }
