@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+footer {visibility: hidden}
+
+.gradio-container {
+    font-family: 'Montserrat', sans-serif !important;
+    max-width: 860px !important;
+    margin: auto !important;
+}
+
+.chatbot {
+    height: 520px !important;
+    border-radius: 12px !important;
+    border: 1px solid #C5A059 !important;
+    padding: 12px !important;
+}
+
+textarea {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 15px !important;
+    border-radius: 10px !important;
+    border: 1px solid #C5A059 !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #C5A059, #a07840) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    color: white !important;
+}
+
+.btn-secondary {
+    border: 1px solid #C5A059 !important;
+    color: #C5A059 !important;
+    border-radius: 8px !important;
+    background: transparent !important;
+}
+
+.primary-header {
+    text-align: center;
+    color: #C5A059;
+}
