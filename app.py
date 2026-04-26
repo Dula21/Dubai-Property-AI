@@ -12,11 +12,14 @@ try:
 except Exception:
     market_context = "Data currently unavailable."
 
+# 2. Load CSS from file
+with open("style.css", "r") as f:
+    custom_css = f.read()
+
 def dubai_ai_advisor(user_message, history):
     try:
         messages = [{"role": "system", "content": f"You are a Dubai Real Estate expert. Use this data: {market_context}"}]
         
-        # History loop for Gradio 4.36.1 compatibility
         for human, assistant in history:
             messages.append({"role": "user", "content": human})
             messages.append({"role": "assistant", "content": assistant})
@@ -31,14 +34,13 @@ def dubai_ai_advisor(user_message, history):
     except Exception as e:
         return f"System Error: {str(e)}"
 
-# 2. Build Interface - CONNECTING THE CSS FILE HERE
-with gr.Blocks(css="style.css", theme=gr.themes.Default(primary_hue="amber")) as demo:
-    gr.Markdown("# 🇦🇪 Dubai Property Intelligence")
-    gr.Markdown("### Premium AI Insights for Investors & Market Enthusiasts")
+# 3. Build Interface
+with gr.Blocks(css=custom_css, title="DPI: Dubai Property Intelligence") as demo:
+    gr.Markdown("# 🇦🇪 Dubai Property Intelligence", elem_classes="primary-header")
+    gr.Markdown("### Your specialized AI advisor for ROI, trends, and investments.")
     
     gr.ChatInterface(
         fn=dubai_ai_advisor,
-        elem_classes="chatbot", # This class connects to the .chatbot rules in  CSS
         examples=[
             ["What are the current property price trends in Dubai Marina?"],
             ["Which areas in Dubai offer the highest rental yields (ROI) right now?"],
@@ -47,6 +49,6 @@ with gr.Blocks(css="style.css", theme=gr.themes.Default(primary_hue="amber")) as
         ]
     )
 
-# 3. Launch
+# 4. Launch
 if __name__ == "__main__":
     demo.launch()
