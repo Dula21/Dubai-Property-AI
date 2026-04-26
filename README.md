@@ -2,7 +2,7 @@
 title: Dubai Property Advisor
 emoji: 🏙️
 colorFrom: blue
-colorTo: gold
+colorTo: yellow
 sdk: gradio
 sdk_version: 4.26.0
 app_file: app.py
