@@ -48,12 +48,7 @@ demo = gr.ChatInterface(
     type="messages",
     title="DPI: Dubai Property Intelligence 🇦🇪",
     description="I am an AI trained on Dubai Land Department trends. Ask me anything about property prices, ROI, or market trends!",
-    examples=[
-        ["What are the latest trends in Downtown?"], 
-        ["Is it a good time to buy in JVC?"],
-        ["Which area has the best ROI for apartments?"],
-        ["Tell me about villa prices in Dubai Hills."]
-    ],
+    
     cache_examples=False,
     theme=gr.themes.Soft()  # Fix: use object not string
 )
