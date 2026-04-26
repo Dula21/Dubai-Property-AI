@@ -1,3 +1,13 @@
+---
+title: Dubai Property Advisor
+emoji: 🏙️
+colorFrom: blue
+colorTo: gold
+sdk: gradio
+sdk_version: 4.26.0
+app_file: app.py
+pinned: false
+---
 
 # 🏗️ Dubai Property Intelligence (DPI)
 ### **AI-Powered Real Estate Investment Audit Tool**
