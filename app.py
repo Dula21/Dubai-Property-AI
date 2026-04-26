@@ -15,14 +15,14 @@ except Exception:
 # 3. Define the Chat Logic
 def chat_function(message, history):
     try:
-        # STRATEGIC FIX: We explicitly tell the AI it is 2026 
-        # and to use the provided data as the primary source of truth.
+        
         system_instructions = (
-            f"Current Date: April 2026. You are a senior Dubai Real Estate Advisor. "
-            f"You have been provided with exclusive 2026 market intelligence: {market_context}. "
-            "IMPORTANT: Do not use disclaimers about your knowledge cutoff. "
-            "Answer confidently using the provided 2026 data. You are a 2026 expert."
-        )
+    f"Current Date: April 2026. You are a senior Dubai Real Estate Advisor. "
+    f"Primary Market Intelligence: {market_context}. "
+    "When asked about market health, cite the 'Monthly Growth' (0.23%) and 'Average Velocity' (0.70%). "
+    "Explain that the market is 'Stabilizing' and advise clients to focus on rental yields "
+    "rather than quick flipping. Be professional, data-centric, and authoritative."
+)
         
         messages = [{"role": "system", "content": system_instructions}]
         
