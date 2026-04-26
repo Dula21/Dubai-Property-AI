@@ -1,98 +1,25 @@
 /* style.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap');
-
-footer {visibility: hidden}
-
-.gradio-container {
-    font-family: 'Inter', sans-serif !important;
-    max-width: 1150px !important;
-    margin: auto !important;
+/* Custom Global Styling for Dubai Intelligence */
+body, .gradio-container {
+    background-color: #0b0b0b !important;
+    color: #e0e0e0 !important;
 }
 
-#chatbot-container {
-    border-radius: 15px !important;
-    border: 1.5px solid #C5A059 !important;
-    padding: 20px !important;
-    background-color: #0b0f19 !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    display: flex;
-    flex-direction: column;
+/* Make the chatbot background dark */
+.message-wrap {
+    background-color: #111111 !important;
 }
 
-#chatbot {
-    height: 550px !important;
-    overflow-y: auto !important;
-    background-color: transparent !important;
-    border: none !important;
-}
-
-#msg-box textarea {
-    background-color: #1a1a1a !important;
-    border: 1px solid #C5A059 !important;
-    color: white !important;
-    padding: 14px !important;
-    border-radius: 10px !important;
-    font-size: 15px !important;
-    font-family: 'Inter', sans-serif !important;
-}
-
-h1 {
-    font-family: 'Montserrat', sans-serif !important;
-    color: #C5A059 !important;
-    text-align: center !important;
-    font-size: 2.8rem !important;
-    margin-bottom: 0px !important;
-}
-
-h3 {
-    text-align: center !important;
-    color: #888 !important;
-    margin-top: 5px !important;
-    margin-bottom: 30px !important;
-}
-
+/* Gold Accents for Buttons and Links */
 button.primary {
-    background: linear-gradient(90deg, #C5A059, #9A7B42) !important;
+    background: linear-gradient(45deg, #C5A059, #8C6239) !important;
     border: none !important;
-    color: white !important;
-    font-weight: 600 !important;
-    border-radius: 10px !important;
+    color: black !important;
+    font-weight: bold !important;
 }
 
-.examples-container {
-    margin-top: 20px !important;
-}
-
-.example-btn {
+/* User Message Styling */
+.user {
     background-color: #1a1a1a !important;
     border: 1px solid #C5A059 !important;
-    color: #C5A059 !important;
-    border-radius: 8px !important;
-    padding: 8px 15px !important;
-    margin: 5px !important;
-    font-family: 'Inter', sans-serif !important;
-}
-
-.example-btn:hover {
-    background-color: #C5A059 !important;
-    color: #000 !important;
-}
-
-#custom-examples {
-    margin-top: 10px;
-    gap: 10px;
-}
-
-#custom-examples button {
-    background: #1a1a1a !important;
-    border: 1px solid #C5A059 !important;
-    color: #C5A059 !important;
-    font-size: 12px !important;
-    border-radius: 20px !important;
-    min-width: 100px !important;
-}
-
-#custom-examples button:hover {
-    background: #C5A059 !important;
-    color: black !important;
 }
