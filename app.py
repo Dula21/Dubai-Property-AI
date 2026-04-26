@@ -38,7 +38,7 @@ with gr.Blocks(css="style.css", theme=gr.themes.Default(primary_hue="amber")) as
     
     gr.ChatInterface(
         fn=dubai_ai_advisor,
-        elem_id="chatbot", # This ID connects to the #chatbot rules in  CSS
+        elem_classes="chatbot", # This class connects to the .chatbot rules in  CSS
         examples=[
             ["What are the current property price trends in Dubai Marina?"],
             ["Which areas in Dubai offer the highest rental yields (ROI) right now?"],

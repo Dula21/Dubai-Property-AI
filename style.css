@@ -12,7 +12,7 @@ footer {visibility: hidden}
 }
 
 /* Fix the "Cramped" Chatbox - Increased height and better borders */
-#chatbot {
+.chatbot {
     min-height: 700px !important; 
     border-radius: 15px !important;
     border: 1px solid #C5A059 !important; /* Gold border */
