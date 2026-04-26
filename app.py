@@ -28,8 +28,20 @@ def dubai_ai_advisor(user_message, history):
         return f"Error: {str(e)}"
 
 # 2. Interface
-demo = gr.ChatInterface(fn=dubai_ai_advisor, title="Dubai Property Intelligence")
-
+# 2. Interface
+demo = gr.ChatInterface(
+    fn=dubai_ai_advisor, 
+    title="DPI: Dubai Property Intelligence 🇦🇪",
+    description="I am an AI trained on Dubai Land Department trends. Ask me anything about property prices, ROI, or market trends!",
+    examples=[
+        "What are the latest trends in Downtown?", 
+        "Is it a good time to buy in JVC?",
+        "Which area has the best ROI for apartments?",
+        "Tell me about villa prices in Dubai Hills."
+    ],
+    cache_examples=False, # This ensures it doesn't try to pre-run the AI answers
+    theme="soft" # This gives it a clean, professional "Dubai office" look
+)
 # 3. Launch (Note: No share=True needed here!)
 if __name__ == "__main__":
     demo.launch()
