@@ -18,4 +18,4 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git push --force https://dula21:$HF_TOKEN@huggingface.co/spaces/dula21/Dubai-Property-AI main
+          git push --force https://dula22438:$HF_TOKEN@huggingface.co/spaces/dula22438/Dubai-property-advisor main
