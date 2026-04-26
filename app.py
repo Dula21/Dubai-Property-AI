@@ -32,7 +32,11 @@ demo = gr.ChatInterface(
     fn=chat_function,
     title="🇦🇪 Dubai Property Intelligence",
     theme="soft",
-    css="style.css" # Gradio will look for the separate file here
+    css="style.css",# Gradio will look for the separate file here
+    examples=[
+        "What are the best areas in Dubai for high rental yields?",
+        "Explain the process of buying off-plan property as a foreigner."
+    ]
 )
 
 if __name__ == "__main__":
