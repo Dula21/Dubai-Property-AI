@@ -10,6 +10,8 @@ app_file: app.py
 pinned: false
 ---
 
+
+
 # 🏗️ Dubai Property Intelligence (DPI)
 ### **AI-Powered Real Estate Investment Audit Tool**
 
@@ -54,3 +56,5 @@ Developed as a **PropTech prototype** to solve the "Trust Gap" in off-plan inves
 ---
 *Developed by **Dulasi Nethma** | BSc (Hons) in IT | Aspiring AI Engineer*
 EOF
+
+**v1 was prototyped in Colab with a lightweight context-injection RAG over DLD index data; due to Gradio/Spaces deployment constraints the app was refactored into app.py, and v2 upgrades retrieval to a ChromaDB vector store over full transaction-level DLD data (Jan–Jul 2026) with per-query retrieval and a strict no-hallucination fallback**
