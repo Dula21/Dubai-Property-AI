@@ -1,2 +1,7 @@
 .env.example
 .env
+transactions-2026-07-19 (1).csv
+book.pdf
+__pycache__/
+*.pyc
+
