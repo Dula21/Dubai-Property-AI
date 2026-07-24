@@ -1,7 +1,7 @@
 gradio==4.36.1
-groq
+groq==1.5.0
 pandas
-chromadb
-sentence-transformers
-huggingface_hub==0.23.2
-dotenv
+chromadb==1.5.9
+sentence-transformers==5.6.0
+huggingface_hub==1.24.0
+python-dotenv==1.2.2
