@@ -1,2 +1,7 @@
+gradio==4.36.1
 groq
+pandas
+chromadb
+sentence-transformers
 huggingface_hub==0.23.2
+dotenv
