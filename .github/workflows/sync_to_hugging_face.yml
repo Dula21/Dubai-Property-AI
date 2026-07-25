@@ -12,14 +12,26 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - name: Install Git LFS
-        run: |
-          git lfs install
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
-      - name: Push to hub
+      - name: Install huggingface_hub
+        run: pip install -U huggingface_hub
+
+      - name: Upload to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git remote add hf https://dula22438:$HF_TOKEN@huggingface.co/spaces/dula22438/Dubai-property-advisor
-          git lfs push hf main --all
-          git push hf main --force
+          python -c "
+          from huggingface_hub import HfApi
+          api = HfApi()
+          api.upload_folder(
+              folder_path='.',
+              repo_id='dula22438/Dubai-property-advisor',
+              repo_type='space',
+              token='${{ secrets.HF_TOKEN }}',
+              ignore_patterns=['.git*', '.github/*', '__pycache__/*', '*.pyc']
+          )
+          "
