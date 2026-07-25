@@ -5,3 +5,4 @@ book.pdf
 __pycache__/
 *.pyc
 
+cleaned_sales.csv
